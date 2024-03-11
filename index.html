@@ -9,43 +9,43 @@
         text-transform: uppercase;
         print-color-adjust: exact;
       }
-      
+
       div.checklist_item {
         display: flex;
         align-items: center;
         clear: both;
         padding: 0.2em;
       }
-      
+
       span.dots {
         flex: 1;
         text-align: center;
         white-space: nowrap;
         overflow: hidden;
       }
-      
+
       span.dots::before {
         content: "...........................................................................................................";
         letter-spacing: 2px;
         color: #000;
       }
-      
+
       ul {
         margin: 0px;
         padding: 0px;
         width: 100%;
       }
-      
+
       li {
         list-style-type: none;
-        width: 100%;    
+        width: 100%;
       }
-      
+
       div.checklist {
         border: 1px solid #000;
         margin-bottom: 2em;
       }
-      
+
       div.checklist > h1 {
         margin: 0;
         padding-top: 0.3em;
@@ -57,10 +57,16 @@
         letter-spacing: 0.1em;
         color: #fff;
       }
-      
     </style>
   </head>
   <body>
+    <div id="header">
+
+        <div id="editor">
+            <textarea rows="24" cols="62"></textarea>
+        </div>
+
+    </div>
     <div class="checklist">
       <h1>Room Startup</h1>
         <ul>
@@ -98,7 +104,7 @@
             </li>
         </ul>
     </div>
-    
+
     <div class="checklist">
       <h1>Room Shutdown</h1>
         <ul>
@@ -166,5 +172,6 @@
             </li>
         </ul>
     </div>
+    <script src="editor.js"></script>
   </body>
 </html>
