@@ -56,9 +56,10 @@ div#checklist_container {
   /*column-gap: 10px; /* Sets the gap between columns */
   /*width: 100%; /* Ensures the container takes up the full width of its parent */
 
-  column-width: 30em; /* Suggests a minimum column width of 300px */
+  -webkit-column-count: 2; /* Chrome, Safari, Opera */
+  -moz-column-count: 2;    /* Firefox */
+  column-count: 2;         /* Standard syntax */
   column-gap: 10px; /* Sets the gap between columns to 10px */
-  width: calc(2 * 30em + 10px); /* Sets the container's width to exactly fit two 300px columns and a 10px gap */
 }
 
 div.checklist {
@@ -85,17 +86,14 @@ div.checklist > h1 {
 
 
 @media print {
+  @page {
+    size: a4;
+  }
+
   div#header {
     display: none
   }
 
-  div#checklist_container {
-    -webkit-column-count: 2; /* Chrome, Safari, Opera */
-    -moz-column-count: 2;    /* Firefox */
-    column-count: 2;         /* Standard syntax */
-    column-gap: 10px;
-    width: auto;
-  }
   div.checklist {
     page-break-inside: avoid; /* Avoid breaking divs between pages */
     break-inside: avoid-column; /* CSS3 standard syntax */
