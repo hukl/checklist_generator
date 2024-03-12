@@ -1,0 +1,75 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: Arial;
+  print-color-adjust: exact;
+}
+
+div#instructions {
+  float: left;
+  display: block;
+  margin-right: 2em;
+}
+
+div#instructions pre {
+  white-space: pre-line;
+}
+
+div.checklist_item {
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  clear: both;
+  padding: 0.2em;
+}
+
+span.dots {
+  flex: 1;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+span.dots::before {
+  content: "...........................................................................................................";
+  letter-spacing: 2px;
+  color: #000;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+}
+
+li {
+  list-style-type: none;
+  width: 100%;
+}
+
+div#checklist_container {
+  display: grid;
+  grid-template-rows: repeat(10, auto);
+  gap: 10px;
+  grid-auto-flow: column;
+  grid-auto-columns: 30em;
+}
+
+div.checklist {
+  border: 1px solid #000;
+  margin-bottom: 2em;
+}
+
+div.checklist > h1 {
+  margin: 0;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  background-color: #000;
+  text-align: center;
+  font-weight: normal;
+  font-size: 1.4em;
+  letter-spacing: 0.1em;
+  color: #fff;
+}
