@@ -4,7 +4,6 @@ html, body {
 
 body {
   font-family: Arial;
-  print-color-adjust: exact;
 }
 
 div#instructions {
@@ -63,9 +62,7 @@ div#checklist_container {
 }
 
 div.checklist {
-  border-left: 1px solid #000;
-  border-right: 1px solid #000;
-  border-bottom: 1px solid #000;
+  border: 1px solid #000;
   margin-bottom: 10px;
   text-transform: uppercase;
   break-inside: avoid;
@@ -97,6 +94,12 @@ div.checklist > h1 {
   div.checklist {
     page-break-inside: avoid; /* Avoid breaking divs between pages */
     break-inside: avoid-column; /* CSS3 standard syntax */
-    /* Other styles as needed */
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  div.checklist > h1 {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
   }
 }
