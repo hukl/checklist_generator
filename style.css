@@ -51,14 +51,12 @@ li {
 }
 
 div#checklist_container {
-  /*column-count: 2; /* Creates two columns */
-  /*column-gap: 10px; /* Sets the gap between columns */
-  /*width: 100%; /* Ensures the container takes up the full width of its parent */
-
-  -webkit-column-count: 2; /* Chrome, Safari, Opera */
-  -moz-column-count: 2;    /* Firefox */
-  column-count: 2;         /* Standard syntax */
-  column-gap: 10px; /* Sets the gap between columns to 10px */
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+  column-gap: 10px;
+  column-fill: auto;
+  height: 100%;
 }
 
 div.checklist {
