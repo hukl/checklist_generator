@@ -11,7 +11,7 @@
         <div id="instructions">
             Write your checklist in the following format:
 
-            <pre>
+            <pre id="example">
                 # Cockpit Preparation
                 * Parking Brake: set
                 * Eng Master 1 & 2: off
@@ -24,16 +24,16 @@
                 * Beacon Light: on
             </pre>
 
-            <button id="try">Try It</button>
+            <button data-js="try_button" id="try">Try It</button>
             <h4>For printing use Firefox or Chrome/Chromium</h4>
         </div>
         <div id="editor">
-            <textarea rows="24" cols="62"></textarea>
+            <textarea data-js="editor_input" rows="24" cols="62"></textarea>
         </div>
 
     </div>
-    <div id="checklist_container">
+    <div data-js="checklist_container" id="checklist_container">
     </div>
-    <script src="editor.js"></script>
+    <script type="module" src="./editor.js"></script>
   </body>
 </html>
