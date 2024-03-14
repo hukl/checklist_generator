@@ -17,11 +17,11 @@ div#instructions pre {
 }
 
 div#checklist_container {
-  margin: -10px 0; /* compensate margin of div.checklist */
   -webkit-column-count: 2;
   -moz-column-count: 2;
   column-count: 2;
   column-gap: 10px;
+  column-fill: auto;
 }
 
 div.checklist {
@@ -30,7 +30,7 @@ div.checklist {
   border-bottom: 1px solid #000;
   text-transform: uppercase;
   break-inside: avoid;
-  margin: 10px 0;
+  margin-bottom: 10px;
 
 }
 div.checklist > h1 {
@@ -56,20 +56,15 @@ div.checklist_item {
 span.dots {
   flex: 1;
   text-align: center;
+  white-space: nowrap;
   overflow: hidden;
-  position: relative;
-}
-span.dots:before{
-  content: " ";
-  background-image: linear-gradient(to right, black 33%, rgba(255,255,255,0) 0%);
-  background-position: bottom;
-  background-size: 6px 2px;
-  background-repeat: repeat-x;
-  display: inline-block;
-  line-height: .8; /* align with baseline of text */
-  width: 98%;
 }
 
+span.dots::before {
+  content: "......................................................................................................................................................................................................................";
+  letter-spacing: 2px;
+  color: #000;
+}
 
 ul {
   margin: 0px;
@@ -90,6 +85,10 @@ li {
     size: a4;
   }
 
+  body {
+    font-size: 10pt !important;
+  }
+
   div#header {
     display: none
   }
@@ -106,3 +105,4 @@ li {
     -webkit-print-color-adjust: exact;
   }
 }
+
