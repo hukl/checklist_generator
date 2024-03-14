@@ -16,56 +16,23 @@ div#instructions pre {
   white-space: pre-line;
 }
 
-div.checklist_item {
-  display: flex;
-  align-items: center;
-  clear: both;
-  padding: 0.2em;
-}
-
-span.dots {
-  flex: 1;
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-span.dots::before {
-  content: "...........................................................................................................";
-  letter-spacing: 2px;
-  color: #000;
-}
-
-ul {
-  margin: 0px;
-  margin-bottom: 0.3em;
-  padding: 0px;
-  width: 100%;
-}
-
-li {
-  list-style-type: none;
-  line-height: 0.9em;
-  padding-left: 0.3em;
-  padding-right: 0.3em;
-}
-
 div#checklist_container {
   -webkit-column-count: 2;
   -moz-column-count: 2;
   column-count: 2;
   column-gap: 10px;
   column-fill: auto;
-  height: 100%;
 }
 
 div.checklist {
-  border: 1px solid #000;
-  margin-bottom: 10px;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  border-bottom: 1px solid #000;
   text-transform: uppercase;
   break-inside: avoid;
-}
+  margin-bottom: 10px;
 
+}
 div.checklist > h1 {
   margin: 0;
   margin-bottom: 0.3em;
@@ -80,9 +47,46 @@ div.checklist > h1 {
 }
 
 
+div.checklist_item {
+  display: flex;
+  align-items: center;
+  padding: 0.2em;
+}
+
+span.dots {
+  flex: 1;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+span.dots::before {
+  content: "......................................................................................................................................................................................................................";
+  letter-spacing: 2px;
+  color: #000;
+}
+
+ul {
+  margin: 0px;
+  margin-bottom: 0.3em;
+  padding: 0px;
+  max-width: 100%;
+}
+
+li {
+  list-style-type: none;
+  line-height: 0.9em;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+}
+
 @media print {
   @page {
     size: a4;
+  }
+
+  body {
+    font-size: 10pt !important;
   }
 
   div#header {
@@ -101,3 +105,4 @@ div.checklist > h1 {
     -webkit-print-color-adjust: exact;
   }
 }
+
