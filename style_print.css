@@ -16,19 +16,13 @@ div#instructions pre {
   white-space: pre-line;
 }
 
-/* div#checklist_container {
+div#checklist_container {
+  display: block;
   -webkit-column-count: 2;
   -moz-column-count: 2;
   column-count: 2;
   column-gap: 10px;
-  column-fill: auto
-}*/
-
-div#checklist_container {
-  display: flex;
-  flex-direction: column;
-  height: 1500px;
-  flex-wrap: wrap;
+  column-fill: auto;
 }
 
 div.checklist {
@@ -38,10 +32,9 @@ div.checklist {
   text-transform: uppercase;
   break-inside: avoid;
   margin-bottom: 10px;
-  min-width: calc(50% - 10px);
-  margin: 0 5px 10px 5px;
-}
+  min-width: auto;
 
+}
 div.checklist > h1 {
   margin: 0;
   margin-bottom: 0.3em;
@@ -58,7 +51,7 @@ div.checklist > h1 {
 
 div.checklist_item {
   display: flex;
-  align-items: stretch;
+  align-items: center;
   padding: 0.2em;
 }
 
@@ -67,8 +60,14 @@ span.dots {
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
-  margin: 0 3px 1px 3px;
-  border-bottom: 2px dotted #000;
+  border-bottom: 0px;
+  margin: 0;
+}
+
+span.dots::before {
+  content: "......................................................................................................................................................................................................................";
+  letter-spacing: 2px;
+  color: #000;
 }
 
 ul {
@@ -83,4 +82,30 @@ li {
   line-height: 0.9em;
   padding-left: 0.3em;
   padding-right: 0.3em;
+}
+
+@media print {
+  @page {
+    size: a4;
+  }
+
+  body {
+    font-size: 10pt !important;
+  }
+
+  div#header {
+    display: none
+  }
+
+  div.checklist {
+    page-break-inside: avoid; /* Avoid breaking divs between pages */
+    break-inside: avoid-column; /* CSS3 standard syntax */
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  div.checklist > h1 {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
 }
