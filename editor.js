@@ -47,6 +47,12 @@ function Checklist() {
         let new_item                  = new_checklist_item(match_result[1], match_result[2]);
 
         current_item_list.appendChild(new_item);
+      } else if ((match_result = line.match(/^---$/))) {
+        let current_checklist_element = acc.slice(-1)[0];
+        let current_item_list         = current_checklist_element.querySelector("ul");
+        let breakline                 = generate_element("<li><hr></li>");
+
+        current_item_list.appendChild(breakline);
       }
 
       return acc;
